@@ -5,29 +5,25 @@ public class Personagem : MonoBehaviour
 
 {
     [ SerializeField ]
-    public string nome;
+    public string Nome;
     [ SerializeField ]
-    public int Nivel;
+    public string Nivel;
     [ SerializeField ]
-    public int vidaMaxima;
+    public string Ataque;
     [ SerializeField ]
-    public int vidaAtual;
-    [ SerializeField ]
-    public int ataque;
-    [ SerializeField ]
-    public int defesa;
+    public string Defesa;
 
     public void AtribuirNome(string nome)
     {
-        this.nome = nome;
+        this.Nome = nome;
     }
     
     public string getNome()
     {
-        return this.nome;
+        return this.Nome;
     }
 
-    public void AtribuirNivel(int nivel)
+    public void AtribuirNivel(string nivel)
     {
         this.Nivel = nivel;
     }
@@ -36,7 +32,26 @@ public class Personagem : MonoBehaviour
     {
         return this.Nivel;
     }
+
+    public void AtribuirAtaque(string ataque)
+    {
+        this.Ataque = ataque;
+    }
+
+    public string getAtaque()
+    {
+        return this.Ataque;
+    }
     
+    public void AtribuirDefesa(string defesa)
+    {
+        this.Defesa = defesa;
+    }
+
+    public string getDefesa()
+    {
+        return this.Defesa;
+    }
     
     
     
@@ -45,6 +60,6 @@ public class Personagem : MonoBehaviour
     
     
 
-    [ SerializeField ]
+  
 
    
