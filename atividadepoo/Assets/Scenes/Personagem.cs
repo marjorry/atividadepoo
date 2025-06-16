@@ -4,45 +4,39 @@ using UnityEngine.Serialization;
 public class Personagem : MonoBehaviour
 
 {
-    [ SerializeField ]
-    public string Nome;
-    [ SerializeField ]
-    public string Nivel;
-    [ SerializeField ]
-    public string Ataque;
-    [ SerializeField ]
-    public string Defesa;
+    [SerializeField] public string Nome;
+    [SerializeField] public int Dano;
+    [SerializeField] public int Ataque;
+    [SerializeField] public string Defesa;
 
     public void AtribuirNome(string nome)
     {
         this.Nome = nome;
     }
-    
+
     public string getNome()
     {
         return this.Nome;
     }
 
-    public void AtribuirNivel(string nivel)
+    public void AtribuirNivel(string dano)
     {
-        this.Nivel = nivel;
+
+        this.Dano = dano;
     }
-    
+
     public string getNivel()
     {
-        return this.Nivel;
+        return this.Dano;
     }
 
-    public void AtribuirAtaque(string ataque)
+    public void AtribuirAtaque(int ataque)
     {
-        this.Ataque = ataque;
+        this.Ataque = Ataque;
     }
 
-    public string getAtaque()
-    {
-        return this.Ataque;
-    }
-    
+    public int AtribuirAtaque;() => this.Ataque
+
     public void AtribuirDefesa(string defesa)
     {
         this.Defesa = defesa;
@@ -52,8 +46,12 @@ public class Personagem : MonoBehaviour
     {
         return this.Defesa;
     }
-    
-    
+
+}
+
+internal class Ataque
+{
+}
     
     
     
