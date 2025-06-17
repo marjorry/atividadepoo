@@ -1,63 +1,57 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Personagem : MonoBehaviour
-
 {
     [SerializeField] public string Nome;
-    [SerializeField] public int Dano;
+    [SerializeField] public int Vida;
     [SerializeField] public int Ataque;
-    [SerializeField] public string Defesa;
+    [SerializeField] public int Defesa;
 
     public void AtribuirNome(string nome)
     {
         this.Nome = nome;
     }
 
-    public string getNome()
+    public string GetNome()
     {
         return this.Nome;
     }
 
-    public void AtribuirNivel(string dano)
+    public void AtribuirVida(int vida)
     {
-
-        this.Dano = dano;
+        this.Vida = vida;
     }
 
-    public string getNivel()
+    public int GetVida()
     {
-        return this.Dano;
+        return this.Vida;
     }
 
     public void AtribuirAtaque(int ataque)
     {
-        this.Ataque = Ataque;
+        this.Ataque = ataque;
     }
 
-    public int AtribuirAtaque;() => this.Ataque
+    public int GetAtaque()
+    {
+        return this.Ataque;
+    }
 
-    public void AtribuirDefesa(string defesa)
+    public void AtribuirDefesa(int defesa)
     {
         this.Defesa = defesa;
     }
 
-    public string getDefesa()
+    public int GetDefesa()
     {
         return this.Defesa;
     }
 
+    public void ReceberDano(int dano)
+    {
+        int danoFinal = Mathf.Max(dano - Defesa, 0);
+        Vida -= danoFinal;
+
+        Debug.Log(Nome + " recebeu " + danoFinal + " de dano. Vida restante: " + Vida);
+    }
 }
-
-internal class Ataque
-{
-}
-    
-    
-    
-    
-    
-
-  
-
-   

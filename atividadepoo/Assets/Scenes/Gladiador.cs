@@ -7,97 +7,74 @@ public class Gladiador : Personagem
         TRIDENTE, REDE
     }
 
+    public enum ArmaduraDoGladiador
+    {
+        COLETE_DE_ACO
+    }
+
+    [SerializeField]
+    private ArmaduraDoGladiador armadura;
+
     [SerializeField]
     private ArmaDoGladiador arma;
 
-    [SerializeField]
-    private bool redeCapturaDisponivel = true;
-
-    public void AtribuirArma(ArmaDoGladiador novaArma)
+    public void AtribuirArmadura(ArmaduraDoGladiador armadura)
     {
-        arma = novaArma;
+        this.armadura = armadura;
     }
 
-    public ArmaDoGladiador Arma()
+    public ArmaduraDoGladiador GetArmadura()
     {
-        return arma;
+        return this.armadura;
+    }
+
+    public void AtribuirArma(ArmaDoGladiador arma)
+    {
+        this.arma = arma;
+    }
+
+    public ArmaDoGladiador GetArma()
+    {
+        return this.arma;
     }
 
     public int DanoDoGladiador()
     {
-      int dano = 0;
+        int dano = 0;
 
-        0,,,, (arma)
+        switch (arma)
         {
             case ArmaDoGladiador.TRIDENTE:
-                 dano = AtribuirAtaque() + 8;
+                dano = GetAtaque() + 15;
                 break;
             case ArmaDoGladiador.REDE:
-                dano = AtribuirAtaque() + 4;
+                dano = GetAtaque() + 5;
                 break;
         }
 
-        return Dano;
-    }
-     
-    public string UsarHabilidadeEspecial()
-    {
-        if (redeCapturaDisponivel)
-        {
-            redeCapturaDisponivel = false;
-            // Efeito: Inimigo fica imobilizado por um turno, por exemplo
-            return "Gladiador lançou a Rede de Captura! O inimigo está imobilizado.";
-        }
-        else
-        {
-            return "A habilidade especial ainda está em recarga!";
-        }
+        return dano;
     }
 
-    public void ResetarHabilidadeEspecial()
+    public void RedeDeCaptura(Personagem alvo)
     {
-        // Pode ser chamado após algum tempo ou evento para reutilizar a habilidade
-        redeCapturaDisponivel = true;
+        Debug.Log("Gladiador usou Rede de Captura em " + alvo.GetNome());
+    }
+
+    void Start()
+    {
+        // Exemplo de teste:
+        AtribuirNome("Maximus");
+        AtribuirAtaque(20);
+        AtribuirArma(ArmaDoGladiador.TRIDENTE);
+
+        Debug.Log("Nome: " + GetNome());
+        Debug.Log("Ataque Base: " + GetAtaque());
+        Debug.Log("Arma: " + GetArma());
+        Debug.Log("Dano do Gladiador: " + DanoDoGladiador());
+    }
+
+    void Update()
+    {
+        
     }
 }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    void start()
-    {
-    
-        
-        
-        
-        
-    }

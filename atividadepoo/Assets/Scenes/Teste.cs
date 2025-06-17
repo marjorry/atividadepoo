@@ -1,31 +1,34 @@
 using UnityEngine;
 
-public class Teste : MonoBehaviour
+public class TesteCombate : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
         
+        Gladiador gladiador = new GameObject("Gladiador").AddComponent<Gladiador>();
+        gladiador.AtribuirNome("Maximus");
+        gladiador.AtribuirVida(100);
+        gladiador.AtribuirAtaque(20);
+        gladiador.AtribuirDefesa(5);
+        gladiador.AtribuirArma(Gladiador.ArmaDoGladiador.TRIDENTE);
+
         
+        Personagem Personagem = new GameObject("personagem").AddComponent<Personagem>();
+        Personagem.AtribuirNome("Gladiador");
+        Personagem.AtribuirVida(80);
+        Personagem.AtribuirAtaque(10);
+        Personagem.AtribuirDefesa(3);
+
+      
+        Debug.Log("--- Combate Iniciado ---");
+        Debug.Log(gladiador.GetNome() + " (Gladiador) VS " + Personagem.GetNome());
+        Debug.Log("Gladiador ataca com: " + gladiador.GetArma());
+        Debug.Log("Dano causado: " + gladiador.DanoDoGladiador());
+
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        Personagem.ReceberDano(gladiador.DanoDoGladiador());
     }
 
-    // Update is called once per frame
     void Update()
     {
         
