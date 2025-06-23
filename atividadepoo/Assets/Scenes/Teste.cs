@@ -24,6 +24,7 @@ public class TesteCombate : MonoBehaviour
         Debug.Log(gladiador.GetNome() + " (Gladiador) VS " + Personagem.GetNome());
         Debug.Log("Gladiador ataca com: " + gladiador.GetArma());
         Debug.Log("Dano causado: " + gladiador.DanoDoGladiador());
+        Debug.Log(gladiador + " recebeu " + " de dano. Vida restante: " + 100);
 
         
         Personagem.ReceberDano(gladiador.DanoDoGladiador());
